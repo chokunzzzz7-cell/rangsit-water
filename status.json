@@ -2,17 +2,21 @@
   "ok": true,
   "note": "",
   "level": "green",
-  "pending": null,
+  "pending": "yellow",
   "changed_at": "2026-11-27T05:59:13\u002B00:00",
-  "checked_at": "2026-11-27T05:59:13\u002B00:00",
+  "checked_at": "2026-11-27T07:35:43\u002B00:00",
   "fractions": {
     "red": 0.99,
-    "orange": 0.95,
-    "yellow": 0.93
+    "orange": 0.99,
+    "yellow": 0.05
   },
   "history": [
     {
       "t": "2026-11-27T05:59:13\u002B00:00",
+      "level": "green"
+    },
+    {
+      "t": "2026-11-27T07:35:43\u002B00:00",
       "level": "green"
     }
   ]
