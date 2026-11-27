@@ -1,1 +1,10 @@
-{"ok":false,"note":"Waiting for the first check","history":[]}
+{
+  "ok": false,
+  "note": "Camera error: Response status code does not indicate success: 404 (Not Found).",
+  "level": null,
+  "pending": null,
+  "changed_at": null,
+  "checked_at": "2026-11-27T05:50:36\u002B00:00",
+  "fractions": null,
+  "history": []
+}
