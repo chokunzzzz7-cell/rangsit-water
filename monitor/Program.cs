@@ -1,8 +1,4 @@
-// Reads the Rangsit camera snapshot and writes status.json.
-// Run from the repo root:
-//   dotnet run --project monitor -c Release                (normal)
-//   dotnet run --project monitor -c Release -- --debug     (print the numbers only, write nothing)
-//   dotnet run --project monitor -c Release -- --file x.png --debug   (test on a saved screenshot)
+
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -36,7 +32,7 @@ public class HistoryEntry
     [JsonPropertyName("level")] public string Level { get; set; } = "";
 }
 
-// Same layout as before, so index.html keeps working.
+
 public class Status
 {
     [JsonPropertyName("ok")] public bool Ok { get; set; }
@@ -73,14 +69,14 @@ public static class Program
         try { img = await LoadImage(path); }
         catch (Exception e)
         {
-            // camera unreachable: record it, keep the last known level
+           
             Console.WriteLine("error: " + e.Message);
             if (!debug)
             {
                 old.Ok = false; old.Note = $"Camera error: {e.Message}"; old.CheckedAt = now;
                 Save(old);
             }
-            return 0;   // not a build failure; the page shows the warning
+            return 0;   
         }
 
         using (img)
@@ -105,7 +101,7 @@ public static class Program
                     var (level, fr) = ReadLevel(img);
                     string? confirmed = old.Level;
 
-                    // a new level must be seen on two runs in a row before it counts
+                  
                     if (level == confirmed) st.Pending = null;
                     else if (old.Pending == level || confirmed == null)
                     {
@@ -130,7 +126,7 @@ public static class Program
         return 0;
     }
 
-    // ---------- image ----------
+  
 
     static async Task<Image<Rgb24>> LoadImage(string? path)
     {
@@ -206,8 +202,7 @@ public static class Program
         return sum / (32 * 18);
     }
 
-    // ---------- files / telegram ----------
-
+    
     static Status LoadStatus()
     {
         try { return JsonSerializer.Deserialize<Status>(File.ReadAllText(StatusFile)) ?? new Status(); }
