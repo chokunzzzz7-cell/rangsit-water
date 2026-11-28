@@ -1,14 +1,14 @@
 {
-  "ok": false,
-  "note": "Camera error: Response status code does not indicate success: 404 (Not Found).",
+  "ok": true,
+  "note": "",
   "level": "green",
-  "pending": "yellow",
+  "pending": null,
   "changed_at": "2026-11-27T05:59:13\u002B00:00",
-  "checked_at": "2026-11-28T05:00:12\u002B00:00",
+  "checked_at": "2026-11-28T14:02:59\u002B00:00",
   "fractions": {
-    "red": 0.99,
-    "orange": 0.99,
-    "yellow": 0.05
+    "red": 0.96,
+    "orange": 0.94,
+    "yellow": 0.91
   },
   "history": [
     {
@@ -17,6 +17,10 @@
     },
     {
       "t": "2026-11-27T07:35:43\u002B00:00",
+      "level": "green"
+    },
+    {
+      "t": "2026-11-28T14:02:59\u002B00:00",
       "level": "green"
     }
   ]
